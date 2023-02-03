@@ -5,6 +5,7 @@ import { Progress } from '../components/ProgressPage/Progress';
 import { GlobalStyle } from '../styles/global';
 import { ThemeProvider } from '@mui/material/styles';
 import { themeLight } from '../styles/theme';
+import AppProvider from '../context/AppContext';
 
 const MyApp: React.FC<any> = ({ Component, pageProps }) => {
   const setIsAnimating = useProgressStore((state) => state.setIsAnimating);
@@ -33,7 +34,9 @@ const MyApp: React.FC<any> = ({ Component, pageProps }) => {
     <ThemeProvider theme={themeLight}>
       <GlobalStyle />
       <Progress isAnimating={isAnimating} />
-      <Component {...pageProps} />
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
     </ThemeProvider>
   );
 };

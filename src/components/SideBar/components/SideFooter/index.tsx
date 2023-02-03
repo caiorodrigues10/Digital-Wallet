@@ -1,6 +1,7 @@
-import Image from "next/image";
-import { useCallback, useState } from "react";
-import { ButtonFooter } from "./style";
+import Image from 'next/image';
+import { useCallback, useState } from 'react';
+import { useAppContext } from '../../../../context/AppContext';
+import { ButtonFooter } from './style';
 
 interface SideFooterProps {
   title: string;
@@ -15,12 +16,17 @@ const SideFooter: React.FC<SideFooterProps> = ({
   active,
   setActive,
 }) => {
+  const { asideIsOpen } = useAppContext();
   const handleActive = useCallback(() => {
     setActive(title);
   }, [setActive, title]);
 
   return (
-    <ButtonFooter active={active === title} onClick={handleActive}>
+    <ButtonFooter
+      active={active === title}
+      onClick={handleActive}
+      asideOpen={asideIsOpen}
+    >
       <Image
         src={src[active === title ? 1 : 0]}
         alt=""

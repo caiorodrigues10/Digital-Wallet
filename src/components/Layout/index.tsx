@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import React, { ReactNode } from 'react';
-import { BsCalendar3 } from 'react-icons/bs';
-import { FaHome } from 'react-icons/fa';
-import { GoSettings } from 'react-icons/go';
-import { IoWallet } from 'react-icons/io5';
-import { MdInsertChart } from 'react-icons/md';
+import { useAppContext } from '../../context/AppContext';
+import { NavBar } from '../NavBar';
+import { SideBar } from '../SideBar';
+import { Container, Content, MainContainer } from './style';
 
 interface BreadCrumbProps {
   path: string;
@@ -16,10 +15,18 @@ interface BodyPage {
   children: ReactNode;
 }
 
-const BodyPage: React.FC<BodyPage> = ({ paths, children }) => {
-  const { push } = useRouter();
+const BodyPage: React.FC = () => {
+  const { asideIsOpen, handleAsideOpen } = useAppContext();
 
-  return <div></div>;
+  return (
+    <MainContainer asideOpen={asideIsOpen}>
+      <SideBar />
+      <Container>
+        <NavBar />
+        <Content>oi</Content>
+      </Container>
+    </MainContainer>
+  );
 };
 
 export { BodyPage };

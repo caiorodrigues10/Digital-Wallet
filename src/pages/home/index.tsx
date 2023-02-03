@@ -14,14 +14,11 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import { BodyPage } from '../../components/Layout';
 import { SideBar } from '../../components/SideBar';
 
 const Home: React.FC = () => {
-  return (
-    <Box>
-      <SideBar />
-    </Box>
-  );
+  return <BodyPage />;
 };
 
 export default Home;
