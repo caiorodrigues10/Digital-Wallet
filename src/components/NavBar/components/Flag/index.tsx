@@ -1,9 +1,10 @@
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
+import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const options = [
   {
@@ -46,15 +47,18 @@ export default function FadeMenu() {
 
   return (
     <div>
-      <Button
-        id="fade-button"
-        aria-controls={open ? 'fade-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        {flag}
-      </Button>
+      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <IconButton
+          id="fade-button"
+          aria-controls={open ? 'fade-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          sx={{ padding: '0.8rem 0.5rem' }}
+        >
+          {flag}
+        </IconButton>
+      </motion.div>
       <Menu
         id="fade-menu"
         MenuListProps={{

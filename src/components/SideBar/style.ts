@@ -6,6 +6,10 @@ interface ContainerSideBarProps {
   asideOpen: boolean;
 }
 
+interface ArrowSideProps {
+  asideOpen: boolean;
+}
+
 export const ContainerSideBar = styled(Box)<ContainerSideBarProps>`
   display: flex;
   flex-direction: column;
@@ -17,7 +21,7 @@ export const ContainerSideBar = styled(Box)<ContainerSideBarProps>`
   transition: 0.5s;
 `;
 
-export const ArrowSide = styled(Box)`
+export const ArrowSide = styled(Box)<ArrowSideProps>`
   width: 25px;
   height: 25px;
   position: absolute;
@@ -32,6 +36,7 @@ export const ArrowSide = styled(Box)`
   color: #777;
   cursor: pointer;
   transition: 0.5s;
+  z-index: 3;
 
   > button {
     transform: ${(p) => (p.asideOpen ? 'rotate(180deg)' : '')};

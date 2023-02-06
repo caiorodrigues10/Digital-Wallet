@@ -16,7 +16,7 @@ interface BodyPage {
 }
 
 const BodyPage: React.FC = () => {
-  const { asideIsOpen, handleAsideOpen } = useAppContext();
+  const { asideIsOpen } = useAppContext();
 
   return (
     <MainContainer asideOpen={asideIsOpen}>

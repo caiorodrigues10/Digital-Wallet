@@ -1,11 +1,7 @@
-import { Box, Paper } from '@mui/material';
+import { Box } from '@mui/material';
 import styled from 'styled-components';
 
-interface ContainerNavBarProps {
-  asideOpen: boolean;
-}
-
-export const ContainerNavBar = styled(Box)<ContainerNavBarProps>`
+export const ContainerNavBar = styled(Box)`
   display: flex;
   padding: 2rem 2rem 0rem 4rem;
   align-items: center;
@@ -16,15 +12,17 @@ export const ContainerNavBar = styled(Box)<ContainerNavBarProps>`
 export const ContainerInputSearch = styled(Box)`
   display: flex;
   position: absolute;
-  z-index: 5;
+  z-index: 1;
   backdrop-filter: blur(2px);
   background-color: transparent;
-  width: calc(100% - 200px);
+  width: calc(100% - 170px);
   height: 80px;
   align-items: center;
-  padding-left: 2.5rem;
+  padding-left: 4.4rem;
   gap: 1rem;
-  margin-left: 1.4rem;
+  -webkit-box-shadow: -1px 14px 13px -10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px 14px 13px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 14px 13px -10px rgba(0, 0, 0, 0.1);
 `;
 
 export const GroupHeader = styled(Box)`

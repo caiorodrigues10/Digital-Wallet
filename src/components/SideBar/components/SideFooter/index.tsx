@@ -23,7 +23,7 @@ const SideFooter: React.FC<SideFooterProps> = ({
 
   return (
     <ButtonFooter
-      active={active === title}
+      active={active.toLowerCase() === title.toLowerCase()}
       onClick={handleActive}
       asideOpen={asideIsOpen}
     >

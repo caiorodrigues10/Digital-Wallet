@@ -23,7 +23,7 @@ const SideButton: React.FC<SideButtonProps> = ({
 
   return (
     <ButtonSide
-      active={active === title}
+      active={active.toLowerCase() === title.toLowerCase()}
       onClick={handleActive}
       asideOpen={asideIsOpen}
     >
