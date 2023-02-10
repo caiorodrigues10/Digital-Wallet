@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colorSystem } from './colors';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -6,7 +7,13 @@ export const GlobalStyle = createGlobalStyle`
      padding: 0;
      box-sizing: border-box;
      font-family: 'Poppins', sans-serif;
+      background: ${colorSystem.backgroundSystem};
+    .css-p51h6s-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill, .css-1h9uykw-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill {
+     -webkit-box-shadow: 0 0 0 100px ${colorSystem.backgroundInputSystem} inset;
+    }
+    
    }
+   
 
    .recharts-tooltip-label {
      color: #000;

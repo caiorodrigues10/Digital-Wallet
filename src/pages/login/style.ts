@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import styled from 'styled-components';
 import { colorSystem } from '../../styles/colors';
 
@@ -33,7 +33,7 @@ export const FormLogin = styled.form`
   }
 `;
 
-export const Test = styled.div`
+export const ContainerForm = styled.div`
   display: flex;
   width: 100%;
   align-items: center;

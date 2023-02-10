@@ -1,22 +1,23 @@
 import {
   Box,
   Button,
-  TextField,
-  FormControl,
-  InputLabel,
-  InputAdornment,
-  OutlinedInput,
-  IconButton,
-  FormControlLabel,
   Checkbox,
+  FormControl,
+  FormControlLabel,
+  IconButton,
+  InputAdornment,
+  InputLabel,
   Link,
+  OutlinedInput,
+  TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
-import { ContainerLogin, FormLogin, SideTrapeze, Test } from './style';
-import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { colorSystem } from '../../styles/colors';
+import { ContainerForm, ContainerLogin, FormLogin, SideTrapeze } from './style';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +32,7 @@ const Login: React.FC = () => {
 
   return (
     <ContainerLogin>
-      <Test>
+      <ContainerForm>
         <FormLogin>
           <Image src="/images/logoDark.svg" alt="" width="200" height="200" />
           <TextField
@@ -84,7 +85,7 @@ const Login: React.FC = () => {
               control={<Checkbox />}
               label="Me manter conectado"
               sx={{
-                color: '#3C3C3C',
+                color: colorSystem.textOvershadowed,
                 span: { fontSize: '14px' },
               }}
             />
@@ -108,8 +109,10 @@ const Login: React.FC = () => {
             alignItems="center"
             fontSize="14px"
           >
-            Don't have an account?
-            <Link href="#" underline="hover" fontWeight="600">
+            <Typography color={colorSystem.mainTextSystem}>
+              Don't have an account?
+            </Typography>
+            <Link href="/singUp" underline="hover" fontWeight="600">
               Sign up
             </Link>
           </Box>
@@ -136,7 +139,7 @@ const Login: React.FC = () => {
             Centralize seus gastos <br /> em um só lugar, rápido e fácil.
           </Typography>
         </Box>
-      </Test>
+      </ContainerForm>
       <SideTrapeze />
     </ContainerLogin>
   );

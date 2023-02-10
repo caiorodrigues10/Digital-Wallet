@@ -19,6 +19,7 @@ const SideItem: React.FC = () => {
         <SideButton
           title="Dashboard"
           active={active}
+          path="/dashboard"
           setActive={setActive}
           src={['/images/iconDashDisabled.svg', '/images/iconDash.svg']}
         />
@@ -26,42 +27,49 @@ const SideItem: React.FC = () => {
           title="Wallet"
           src={['/images/walletDisabled.svg', '/images/wallet.svg']}
           active={active}
+          path="/wallet"
           setActive={setActive}
         />
         <SideButton
           title="Achievements"
           src={['/images/achievementsDisabled.svg', '/images/achievements.svg']}
           active={active}
+          path="/achievements"
           setActive={setActive}
         />
         <SideButton
           title="User"
           src={['/images/userDisabled.svg', '/images/user.svg']}
           active={active}
+          path="/users"
           setActive={setActive}
         />
         <SideButton
           title="Calendar"
           src={['/images/calendarDisabled.svg', '/images/calendar.svg']}
           active={active}
+          path="/calendar"
           setActive={setActive}
         />
         <SideButton
           title="Settings"
           src={['/images/configDisabled.svg', '/images/config.svg']}
           active={active}
+          path="/achievements"
           setActive={setActive}
         />
         <SideButton
           title="Doubts"
           src={['/images/chatDisabled.svg', '/images/chat.svg']}
           active={active}
+          path="/doubts"
           setActive={setActive}
         />
         <SideButton
           title="Help"
           src={['/images/helpDisabled.svg', '/images/help.svg']}
           active={active}
+          path="/help"
           setActive={setActive}
         />
       </Box>
@@ -69,6 +77,7 @@ const SideItem: React.FC = () => {
         title="Exit"
         src={['/images/exitDisabled.svg', '/images/exit.svg']}
         active={active}
+        path="/login"
         setActive={setActive}
       />
     </SideItemContainer>

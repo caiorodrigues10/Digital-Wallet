@@ -1,17 +1,31 @@
-import { createTheme } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
 
-const themeLight = createTheme({
+const themeColors = (mode: PaletteMode) => ({
   palette: {
-    mode: 'light',
-    primary: {
-      light: '#5CAB7E',
-      main: '#417B5A',
-      dark: '#2B7049',
-      contrastText: '#FBFBF2',
-    },
-    secondary: {
-      main: '#ABE9D2',
-    },
+    mode,
+    ...(mode === 'light'
+      ? {
+          primary: {
+            light: '#5CAB7E',
+            main: '#417B5A',
+            dark: '#2B7049',
+            contrastText: '#FBFBF2',
+          },
+          secondary: {
+            main: '#ABE9D2',
+          },
+        }
+      : {
+          primary: {
+            light: '#5CAB7E',
+            main: '#417B5A',
+            dark: '#2B7049',
+            contrastText: '#FBFBF2',
+          },
+          secondary: {
+            main: '#ABE9D2',
+          },
+        }),
   },
   typography: {
     fontFamily: [
@@ -29,19 +43,4 @@ const themeLight = createTheme({
   },
 });
 
-const themeDark = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      light: '#5CAB7E',
-      main: '#417B5A',
-      dark: '#2B7049',
-      contrastText: '#FBFBF2',
-    },
-    secondary: {
-      main: '#ABE9D2',
-    },
-  },
-});
-
-export { themeLight, themeDark };
+export { themeColors };
